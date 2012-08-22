@@ -1,0 +1,26 @@
+HKCR
+{
+	D3D8Wrapper.VolumeTextureWrapper.1 = s 'VolumeTextureWrapper Class'
+	{
+		CLSID = s '{0BA068A6-A9C5-4B9E-BD9D-47C62076A911}'
+	}
+	D3D8Wrapper.VolumeTextureWrapper = s 'VolumeTextureWrapper Class'
+	{
+		CLSID = s '{0BA068A6-A9C5-4B9E-BD9D-47C62076A911}'
+		CurVer = s 'D3D8Wrapper.VolumeTextureWrapper.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {0BA068A6-A9C5-4B9E-BD9D-47C62076A911} = s 'VolumeTextureWrapper Class'
+		{
+			ProgID = s 'D3D8Wrapper.VolumeTextureWrapper.1'
+			VersionIndependentProgID = s 'D3D8Wrapper.VolumeTextureWrapper'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{37478504-371A-47BD-A456-114F23C05E41}'
+		}
+	}
+}

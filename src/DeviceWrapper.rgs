@@ -1,0 +1,26 @@
+HKCR
+{
+	D3D8Wrapper.DeviceWrapper.1 = s 'DeviceWrapper Class'
+	{
+		CLSID = s '{3257F172-68F4-4148-95E9-BE2F71506DE6}'
+	}
+	D3D8Wrapper.DeviceWrapper = s 'DeviceWrapper Class'
+	{
+		CLSID = s '{3257F172-68F4-4148-95E9-BE2F71506DE6}'
+		CurVer = s 'D3D8Wrapper.DeviceWrapper.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {3257F172-68F4-4148-95E9-BE2F71506DE6} = s 'DeviceWrapper Class'
+		{
+			ProgID = s 'D3D8Wrapper.DeviceWrapper.1'
+			VersionIndependentProgID = s 'D3D8Wrapper.DeviceWrapper'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{37478504-371A-47BD-A456-114F23C05E41}'
+		}
+	}
+}

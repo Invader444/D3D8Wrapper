@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'D3D8Wrapper'
+		'D3D8Wrapper.DLL'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}

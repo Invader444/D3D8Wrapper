@@ -1,0 +1,26 @@
+HKCR
+{
+	D3D8Wrapper.VertexBufferWrapper.1 = s 'VertexBufferWrapper Class'
+	{
+		CLSID = s '{B22FD3AB-67FE-4E50-813E-33C2133F035B}'
+	}
+	D3D8Wrapper.VertexBufferWrapper = s 'VertexBufferWrapper Class'
+	{
+		CLSID = s '{B22FD3AB-67FE-4E50-813E-33C2133F035B}'
+		CurVer = s 'D3D8Wrapper.VertexBufferWrapper.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {B22FD3AB-67FE-4E50-813E-33C2133F035B} = s 'VertexBufferWrapper Class'
+		{
+			ProgID = s 'D3D8Wrapper.VertexBufferWrapper.1'
+			VersionIndependentProgID = s 'D3D8Wrapper.VertexBufferWrapper'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{37478504-371A-47BD-A456-114F23C05E41}'
+		}
+	}
+}

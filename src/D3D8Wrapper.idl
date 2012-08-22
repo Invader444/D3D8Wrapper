@@ -1,0 +1,376 @@
+/*
+ * This file is part of the Direct3D8Wrapper Library
+ * Copyright (C) 2012  Jonathan M. Horowitz
+ *
+ * Direct3D8Wrapper is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public License
+ * as published by the Free Software Foundation, either version 3 of
+ * the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+// D3D8Wrapper.idl : IDL source for D3D8Wrapper
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (D3D8Wrapper.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+// Forward declarations...
+interface IDeviceWrapper;
+interface ISwapChainWrapper;
+interface ITextureWrapper;
+interface IVolumeTextureWrapper;
+interface ICubeTextureWrapper;
+interface IVertexBufferWrapper;
+interface IIndexBufferWrapper;
+interface ISurfaceWrapper;
+
+[
+	local,
+	object,
+	uuid(A2D62921-E9B8-45EA-BF6E-625DDEB6B142),
+	helpstring("IWrapper Interface"),
+	pointer_default(unique)
+]
+interface IWrapper : IUnknown{
+	typedef [unique] IWrapper* LPWRAPPER;
+
+	HRESULT GetWrappedInterface(
+	            [out, annotation("__RPC__deref_out")] void** ppvObject
+	        );
+
+	HRESULT SetWrappedInterface(
+	            [in] void* pObject
+	        );
+};
+[
+	local,
+	object,
+	uuid(B5505196-2190-4FED-AFB5-9C7B840FD483),
+	dual,
+	nonextensible,
+	helpstring("IDirect3D8Wrapper Interface"),
+	pointer_default(unique)
+]
+interface IDirect3D8Wrapper : IWrapper{
+	typedef [unique] HRESULT (*CreateDeviceCallback_t)(void*, IDeviceWrapper*);
+	typedef [unique] HRESULT (*CCreateDeviceCallback_t)(IDeviceWrapper*);
+
+	HRESULT SetCreateDeviceCallback(
+	            [in] void* pThis,
+				[in] void* pCallbackFunction
+	        );
+};
+[
+	local,
+	object,
+	uuid(15EA8090-5944-460A-AA8D-55CFF6650CAB),
+	dual,
+	nonextensible,
+	helpstring("IDeviceWrapper Interface"),
+	pointer_default(unique)
+]
+interface IDeviceWrapper : IWrapper{
+	typedef [unique] HRESULT (*CreateAdditionalSwapChainCallback_t)(void*, ISwapChainWrapper*);
+	typedef [unique] HRESULT (*CCreateAdditionalSwapChainCallback_t)(ISwapChainWrapper*);
+
+	typedef [unique] HRESULT (*CreateTextureCallback_t)(void*, ITextureWrapper*);
+	typedef [unique] HRESULT (*CCreateTextureCallback_t)(ITextureWrapper*);
+
+	typedef [unique] HRESULT (*CreateVolumeTextureCallback_t)(void*, IVolumeTextureWrapper*);
+	typedef [unique] HRESULT (*CCreateVolumeTextureCallback_t)(IVolumeTextureWrapper*);
+
+	typedef [unique] HRESULT (*CreateCubeTextureCallback_t)(void*, ICubeTextureWrapper*);
+	typedef [unique] HRESULT (*CCreateCubeTextureCallback_t)(ICubeTextureWrapper*);
+
+	typedef [unique] HRESULT (*CreateVertexBufferCallback_t)(void*, IVertexBufferWrapper*);
+	typedef [unique] HRESULT (*CCreateVertexBufferCallback_t)(IVertexBufferWrapper*);
+
+	typedef [unique] HRESULT (*CreateIndexBufferCallback_t)(void*, IIndexBufferWrapper*);
+	typedef [unique] HRESULT (*CCreateIndexBufferCallback_t)(IIndexBufferWrapper*);
+
+	typedef [unique] HRESULT (*CreateRenderTargetCallback_t)(void*, ISurfaceWrapper*);
+	typedef [unique] HRESULT (*CCreateRenderTargetCallback_t)(ISurfaceWrapper*);
+
+	typedef [unique] HRESULT (*CreateDepthStencilSurfaceCallback_t)(void*, ISurfaceWrapper*);
+	typedef [unique] HRESULT (*CCreateDepthStencilSurfaceCallback_t)(ISurfaceWrapper*);
+
+	typedef [unique] HRESULT (*CreateImageSurfaceCallback_t)(void*, ISurfaceWrapper*);
+	typedef [unique] HRESULT (*CCreateImageSurfaceCallback_t)(ISurfaceWrapper*);
+
+	typedef [unique] HRESULT (*GetBackBufferCallback_t)(void*, ISurfaceWrapper*);
+	typedef [unique] HRESULT (*CGetBackBufferCallback_t)(ISurfaceWrapper*);
+
+	HRESULT SetCreateAdditionalSwapChainCallback(
+	            [in] void* pThis,
+				[in] void* pCallbackFunction
+	        );
+
+	HRESULT SetCreateTextureCallback(
+	            [in] void* pThis,
+				[in] void* pCallbackFunction
+	        );
+
+	HRESULT SetCreateVolumeTextureCallback(
+	            [in] void* pThis,
+				[in] void* pCallbackFunction
+	        );
+
+	HRESULT SetCreateCubeTextureCallback(
+	            [in] void* pThis,
+				[in] void* pCallbackFunction
+	        );
+
+	HRESULT SetCreateVertexBufferCallback(
+	            [in] void* pThis,
+				[in] void* pCallbackFunction
+	        );
+
+	HRESULT SetCreateIndexBufferCallback(
+	            [in] void* pThis,
+				[in] void* pCallbackFunction
+	        );
+
+	HRESULT SetCreateRenderTargetCallback(
+	            [in] void* pThis,
+				[in] void* pCallbackFunction
+	        );
+
+	HRESULT SetCreateDepthStencilSurfaceCallback(
+	            [in] void* pThis,
+				[in] void* pCallbackFunction
+	        );
+
+	HRESULT SetCreateImageSurfaceCallback(
+	            [in] void* pThis,
+				[in] void* pCallbackFunction
+	        );
+
+	HRESULT SetGetBackBufferCallback(
+	            [in] void* pThis,
+				[in] void* pCallbackFunction
+	        );
+};
+[
+	object,
+	uuid(B59352C6-756D-4D2B-B0DD-FC52BDD806D3),
+	dual,
+	nonextensible,
+	helpstring("IBaseTextureWrapper Interface"),
+	pointer_default(unique)
+]
+interface IBaseTextureWrapper : IWrapper{
+};
+[
+	object,
+	uuid(FBA744E4-3875-4ED0-A5A9-3A43658A803B),
+	dual,
+	nonextensible,
+	helpstring("ICubeTextureWrapper Interface"),
+	pointer_default(unique)
+]
+interface ICubeTextureWrapper : IWrapper{
+};
+[
+	object,
+	uuid(9A1CE530-FB22-4BDB-988A-3E3238926E4A),
+	dual,
+	nonextensible,
+	helpstring("IIndexBufferWrapper Interface"),
+	pointer_default(unique)
+]
+interface IIndexBufferWrapper : IWrapper{
+};
+[
+	object,
+	uuid(0D7B888E-3476-4BF9-BFF1-65BCE199C55E),
+	dual,
+	nonextensible,
+	helpstring("IResourceWrapper Interface"),
+	pointer_default(unique)
+]
+interface IResourceWrapper : IWrapper{
+};
+[
+	object,
+	uuid(0697C39E-A09C-40C6-A6A5-D2F4E004AFCA),
+	dual,
+	nonextensible,
+	helpstring("ISurfaceWrapper Interface"),
+	pointer_default(unique)
+]
+interface ISurfaceWrapper : IWrapper{
+};
+[
+	object,
+	uuid(03F0A940-AE5B-4041-B103-B316C14241C4),
+	dual,
+	nonextensible,
+	helpstring("ISwapChainWrapper Interface"),
+	pointer_default(unique)
+]
+interface ISwapChainWrapper : IWrapper{
+};
+[
+	object,
+	uuid(4BCE883A-AD0A-4C17-BB00-DCDC2D40F855),
+	dual,
+	nonextensible,
+	helpstring("ITextureWrapper Interface"),
+	pointer_default(unique)
+]
+interface ITextureWrapper : IWrapper{
+};
+[
+	object,
+	uuid(0A5D38C5-F10E-43CF-8BA5-D451269A7DB3),
+	dual,
+	nonextensible,
+	helpstring("IVertexBufferWrapper Interface"),
+	pointer_default(unique)
+]
+interface IVertexBufferWrapper : IWrapper{
+};
+[
+	object,
+	uuid(9D5903BC-6885-458C-A62B-9C3EC796078F),
+	dual,
+	nonextensible,
+	helpstring("IVolumeWrapper Interface"),
+	pointer_default(unique)
+]
+interface IVolumeWrapper : IWrapper{
+};
+[
+	object,
+	uuid(6DCA4B87-7237-421C-B3BD-8858C021E620),
+	dual,
+	nonextensible,
+	helpstring("IVolumeTextureWrapper Interface"),
+	pointer_default(unique)
+]
+interface IVolumeTextureWrapper : IWrapper{
+};
+[
+	uuid(37478504-371A-47BD-A456-114F23C05E41),
+	version(1.0),
+	helpstring("D3D8Wrapper 1.0 Type Library")
+]
+library D3D8WrapperLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(179F9108-9DCA-4701-9DB9-B17F47B0220A),
+		helpstring("Wrapper Class")
+	]
+	coclass Wrapper
+	{
+		[default] interface IWrapper;
+	};
+	[
+		uuid(4E1F658E-DF3A-4A74-9D83-C6893D5F878E),
+		helpstring("Direct3D8Wrapper Class")
+	]
+	coclass Direct3D8Wrapper
+	{
+		[default] interface IDirect3D8Wrapper;
+	};
+	[
+		uuid(3257F172-68F4-4148-95E9-BE2F71506DE6),
+		helpstring("DeviceWrapper Class")
+	]
+	coclass DeviceWrapper
+	{
+		[default] interface IDeviceWrapper;
+	};
+	[
+		uuid(4F4A2855-2EB4-492E-8DC0-A044FD106C31),
+		helpstring("BaseTextureWrapper Class")
+	]
+	coclass BaseTextureWrapper
+	{
+		[default] interface IBaseTextureWrapper;
+	};
+	[
+		uuid(361C0AC6-B3B3-43F6-B235-6DD13B0FDDC4),
+		helpstring("CubeTextureWrapper Class")
+	]
+	coclass CubeTextureWrapper
+	{
+		[default] interface ICubeTextureWrapper;
+	};
+	[
+		uuid(2711BBFA-351B-4230-92FB-EFFCFB1363F6),
+		helpstring("IndexBufferWrapper Class")
+	]
+	coclass IndexBufferWrapper
+	{
+		[default] interface IIndexBufferWrapper;
+	};
+	[
+		uuid(C40FFBDB-2FA7-49A1-BDAE-7A12B4FDBBFB),
+		helpstring("ResourceWrapper Class")
+	]
+	coclass ResourceWrapper
+	{
+		[default] interface IResourceWrapper;
+	};
+	[
+		uuid(4E7F35F2-C2AB-4925-A55C-2E5AD6834AB4),
+		helpstring("SurfaceWrapper Class")
+	]
+	coclass SurfaceWrapper
+	{
+		[default] interface ISurfaceWrapper;
+	};
+	[
+		uuid(50C56166-F442-4939-AF2C-68BB6BF7BED2),
+		helpstring("SwapChainWrapper Class")
+	]
+	coclass SwapChainWrapper
+	{
+		[default] interface ISwapChainWrapper;
+	};
+	[
+		uuid(42100B9A-9CA6-4CFC-9A5B-5F6337575A8D),
+		helpstring("TextureWrapper Class")
+	]
+	coclass TextureWrapper
+	{
+		[default] interface ITextureWrapper;
+	};
+	[
+		uuid(B22FD3AB-67FE-4E50-813E-33C2133F035B),
+		helpstring("VertexBufferWrapper Class")
+	]
+	coclass VertexBufferWrapper
+	{
+		[default] interface IVertexBufferWrapper;
+	};
+	[
+		uuid(1BFA7FB7-03C7-476D-8614-8E9C624EFC4F),
+		helpstring("VolumeWrapper Class")
+	]
+	coclass VolumeWrapper
+	{
+		[default] interface IVolumeWrapper;
+	};
+	[
+		uuid(0BA068A6-A9C5-4B9E-BD9D-47C62076A911),
+		helpstring("VolumeTextureWrapper Class")
+	]
+	coclass VolumeTextureWrapper
+	{
+		[default] interface IVolumeTextureWrapper;
+	};
+};

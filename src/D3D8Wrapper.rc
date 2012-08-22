@@ -1,0 +1,137 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""D3D8Wrapper.tlb""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "FileDescription", "Direct3D 8 to 9 Wrapper Library"
+            VALUE "FileVersion", "1.0.0.0"
+            VALUE "InternalName", "D3D8Wrapper.dll"
+            VALUE "LegalCopyright", "(c) 2012 Jonathan M. Horowitz.  All rights reserved."
+            VALUE "OriginalFilename", "D3D8Wrapper.dll"
+            VALUE "ProductName", "Direct3D8Wrapper Library"
+            VALUE "ProductVersion", "1.0.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+IDR_D3D8WRAPPER         REGISTRY                "D3D8Wrapper.rgs"
+IDR_DIRECT3D8WRAPPER    REGISTRY                "Direct3D8Wrapper.rgs"
+IDR_DEVICEWRAPPER       REGISTRY                "DeviceWrapper.rgs"
+IDR_BASETEXTUREWRAPPER  REGISTRY                "BaseTextureWrapper.rgs"
+IDR_CUBETEXTUREWRAPPER  REGISTRY                "CubeTextureWrapper.rgs"
+IDR_INDEXBUFFERWRAPPER  REGISTRY                "IndexBufferWrapper.rgs"
+IDR_RESOURCEWRAPPER     REGISTRY                "ResourceWrapper.rgs"
+IDR_SURFACEWRAPPER      REGISTRY                "SurfaceWrapper.rgs"
+IDR_SWAPCHAINWRAPPER    REGISTRY                "SwapChainWrapper.rgs"
+IDR_TEXTUREWRAPPER      REGISTRY                "TextureWrapper.rgs"
+IDR_VERTEXBUFFERWRAPPER REGISTRY                "VertexBufferWrapper.rgs"
+IDR_VOLUMEWRAPPER       REGISTRY                "VolumeWrapper.rgs"
+IDR_VOLUMETEXTUREWRAPPER REGISTRY                "VolumeTextureWrapper.rgs"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PROJNAME            "D3D8Wrapper"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "D3D8Wrapper.tlb"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

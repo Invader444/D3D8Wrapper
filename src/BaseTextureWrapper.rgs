@@ -1,0 +1,26 @@
+HKCR
+{
+	D3D8Wrapper.BaseTextureWrapper.1 = s 'BaseTextureWrapper Class'
+	{
+		CLSID = s '{4F4A2855-2EB4-492E-8DC0-A044FD106C31}'
+	}
+	D3D8Wrapper.BaseTextureWrapper = s 'BaseTextureWrapper Class'
+	{
+		CLSID = s '{4F4A2855-2EB4-492E-8DC0-A044FD106C31}'
+		CurVer = s 'D3D8Wrapper.BaseTextureWrapper.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {4F4A2855-2EB4-492E-8DC0-A044FD106C31} = s 'BaseTextureWrapper Class'
+		{
+			ProgID = s 'D3D8Wrapper.BaseTextureWrapper.1'
+			VersionIndependentProgID = s 'D3D8Wrapper.BaseTextureWrapper'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{37478504-371A-47BD-A456-114F23C05E41}'
+		}
+	}
+}
