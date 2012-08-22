@@ -1,0 +1,15 @@
+D3D8Wrapper Library
+Copyright (C) 2012  Jonathan M. Horowitz
+
+This library provides Direct3D8 interfaces for Direct3D9 implementations.
+
+It is COM-based and tries to keep as close to the original Direct3D8 behavior as possible.
+
+To use this library, you must first create an instance of the IDirect3D8Wrapper interface through
+COM (rather than through the Direct3DCreate8 API call). The returned wrapper interface will
+have already created an IDirect3D9 interface, which you may get via the GetWrappedInterface function.
+
+Most functions which return an interface have callback functionality, which allows you to register a global
+or member function to be called that takes the IDirect3D<Whatever>9* as a parameter. In this way, as a
+client calls the wrapper functions, you may be appraised of new interfaces being created on the Direct3D9
+side of things.
